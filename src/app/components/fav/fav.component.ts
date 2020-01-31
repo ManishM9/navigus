@@ -20,4 +20,18 @@ export class FavComponent implements OnInit {
     });
   }
 
+  fav(id){
+    // console.log(id);
+    this.beerService.setfav(id).subscribe(data => {
+      if(data){
+        for(var i=0;i<this.beers.length;i++){
+          if(this.beers[i].product_id == id){
+            this.beers[i].fav = !this.beers[i].fav;
+          }
+        }
+      }
+    });
+    
+  }
+
 }
