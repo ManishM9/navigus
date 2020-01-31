@@ -11,8 +11,8 @@
 
 <div class="container mt-5 px-5">
   <form class="row w-100 form-inline mx-auto">
-    <input type="text" class="form-control mr-1 col-7 offset-2" [(ngModel)]="search_text" name="search_text" placeholder="Search for Beer....">
-    <button class="btn btn-primary col-1" (click)="search()">Search</button>
+    <input type="text" class="form-control mr-1 col-lg-7 offset-lg-2" [(ngModel)]="search_text" name="search_text" placeholder="Search for Beer....">
+    <button class="btn btn-primary col-lg-1 col-xs-1" (click)="search()">Search</button>
   </form>
   
 </div>
@@ -22,10 +22,10 @@
     
     <div *ngFor="let beer of beers" class="card mb-3" style="height: 200px;">
       <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="{{ beer.src }}" class="card-img" alt="...">
+        <div class="col-4">
+          <img src="{{ beer.src }}" class="card-img img-responsive" alt="{{ beer.title }}">
         </div>
-        <div class="col-md-8">
+        <div class="col-8">
           <div class="card-body">
             <p class="justify-content-end w-100 text-right fa" style="position: absolute;"><span class="btn mr-5 text-right" (click)="fav(beer.product_id)" [class.fa-star-o]="!beer.fav" [class.fa-star]="beer.fav" [class.checked]="beer.fav" ></span></p>
             <h5 class="card-title mt-2">{{ beer.title }}</h5>
